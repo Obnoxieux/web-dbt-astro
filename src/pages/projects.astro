@@ -1,0 +1,44 @@
+---
+import {OpenGraphDefaults} from "../lib/classes/OpenGraphDefaults";
+import Layout from "../layouts/Layout.astro";
+import type {GitHubRepo} from "../lib/model/GitHubRepo";
+import {GitHubClient} from "../lib/classes/GitHubClient";
+import ProjectExampleSection from "../components/svelte/projects/ProjectExampleSection.svelte";
+
+const client = new GitHubClient();
+
+const repos: GitHubRepo[] = await client.loadRepositoriesForUser(client.githubUsername, "users");
+
+let languages: string[] = [];
+repos.forEach((repo: GitHubRepo) => {
+  languages.push(repo.language);
+});
+
+const pageTitle = 'My personal projects';
+const description = 'Discover my work, from mobile apps to websites and backends.';
+
+const metaTags = {
+  title: pageTitle,
+  description: description,
+  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+};
+---
+
+<Layout title={pageTitle} description={description} metaTags={metaTags}>
+
+  <section id="project-teaser" class="mb-4 mt-2 flex flex-col gap-2">
+    <h1 class="font-semibold mb-2 text-xl text-primary">My Projects</h1>
+    <p class="text-3xl sm:text-4xl font-extrabold">Discover my work</p>
+    <div class="mt-4 max-w-3xl space-y-6">
+      <p>
+        All projects on this page are loaded via the GitHub API from my personal profile and therefore always
+        up-to-date.
+        Links to the GitHub repository are provided on the detail page. Feel free to contribute and/or roast my code.
+      </p>
+    </div>
+  </section>
+  <div class="divider my-5"></div>
+
+  <ProjectExampleSection client:load repos={repos} languages={languages}/>
+
+</Layout>
