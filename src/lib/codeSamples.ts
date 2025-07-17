@@ -1,6 +1,6 @@
 import { kotlin, php, swift, typescript } from "svelte-highlight/languages";
 
-export const languages = {
+export const codeSamples = {
     swift: {
         languageType: swift,
         codeSample: 
@@ -50,6 +50,7 @@ fun main() {
     },
     typescript: {
         languageType: typescript,
+        // language=TypeScript
         codeSample:
 `class SoftwareEngineer {
     constructor(

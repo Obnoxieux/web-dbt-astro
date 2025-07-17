@@ -1,0 +1,23 @@
+---
+import ProjectsHeroTeaser from "../components/svelte/projects/ProjectsHeroTeaser.svelte";
+import Layout from "../layouts/Layout.astro";
+import {OpenGraphDefaults} from "../lib/classes/OpenGraphDefaults";
+import TechStackSection from "../components/astro/projects/TechStackSection.astro";
+
+const pageTitle = 'Technologies and Frameworks';
+const description = 'My toolbox to build apps and websites.';
+
+const metaTags = {
+  title: pageTitle,
+  description: description,
+  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+};
+---
+
+<Layout title={pageTitle} description={description} metaTags={metaTags}>
+  <div class="flex flex-col">
+    <TechStackSection/>
+    <div class="divider"></div>
+    <ProjectsHeroTeaser/>
+  </div>
+</Layout>

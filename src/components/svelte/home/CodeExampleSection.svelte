@@ -1,25 +1,25 @@
 <script lang="ts">
     import CodeTabs from "./CodeTabs.svelte";
     import CodeBlock from "./CodeBlock.svelte";
-    import { Language } from "$lib/enums/Language";
-    import { languages } from "$lib/codeSamples";
-    import type {LanguageItem} from "$lib/model/LanguageItem";
+    import {Language} from "../../../lib/enums/Language.ts";
+    import type {LanguageItem} from "../../../lib/model/LanguageItem.ts";
+    import {codeSamples} from "../../../lib/codeSamples.ts";
 
-    let lang: LanguageItem = $state(languages.typescript)
+    let lang: LanguageItem = $state(codeSamples.typescript)
 
     function callback(language: Language) {
         switch (language) {
             case Language.typescript:
-                lang = languages.typescript
+                lang = codeSamples.typescript
                 break
             case Language.kotlin:
-                lang = languages.kotlin
+                lang = codeSamples.kotlin
                 break
             case Language.swift:
-                lang = languages.swift
+                lang = codeSamples.swift
                 break
             case Language.php:
-                lang = languages.php
+                lang = codeSamples.php
                 break
         }
     }

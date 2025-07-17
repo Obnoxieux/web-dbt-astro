@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {OpenGraphDefaults} from '../lib/classes/OpenGraphDefaults';
+import {PUBLIC_CONTACT_ADDRESS, PUBLIC_CONTACT_EMAIL_ADDRESS, PUBLIC_CONTACT_PHONE} from 'astro:env/client';
+
+const pageTitle = 'Impressum';
+const description = 'Legal information about this website.';
+
+const metaTags = {
+  title: pageTitle,
+  description: description,
+  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+};
+
+// Get contact information from environment variables
+const contactEmail = PUBLIC_CONTACT_EMAIL_ADDRESS;
+const contactPhone = PUBLIC_CONTACT_PHONE;
+const contactAddress = PUBLIC_CONTACT_ADDRESS;
+---
+
+<Layout title={pageTitle} description={description} metaTags={metaTags}>
+  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+    <div class="prose">
+      <h1>Impressum</h1>
+      <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+      <p>David Battefeld<br/>
+        {contactAddress}</p>
+      <h2>Kontakt</h2>
+      <p>Telefon: {contactPhone}<br/>
+        E-Mail: <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+      <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+    </div>
+  </div>
+</Layout>

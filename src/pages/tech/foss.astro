@@ -1,0 +1,64 @@
+---
+import {OpenGraphDefaults} from "../../lib/classes/OpenGraphDefaults";
+import Layout from "../../layouts/Layout.astro";
+const pageTitle = 'Technologies and Frameworks';
+const description = 'My toolbox to build apps and websites.';
+
+const metaTags = {
+  title: pageTitle,
+  description: description,
+  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+};
+---
+<Layout title={pageTitle} description={description} metaTags={metaTags}>
+  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+    <section id="foss-intro" class="mb-8 mt-2 flex flex-col gap-2">
+      <p class="font-semibold mb-2 text-xl text-warning">Open Source</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold">My views on free software</h1>
+      <div class="mt-4 max-w-3xl space-y-6">
+        <p>I believe in the spirit of collective engagement, mutual collaboration and sharing that the free software
+          movement envisions. Almost none of my work would be possible without contributions by countless programmers
+          much smarter than me.</p>
+        <p>I would not consider myself to be a hardcore GNU/Linux traditionalist though (too much of a soft spot for
+          the macOS design language).</p>
+      </div>
+    </section>
+    <section id="foss-essay" class="prose">
+      <h2>Learnings from my experience as a user</h2>
+      <p>
+        As I have been using software and technology for far longer than I have been writing it, I have come to
+        experience a lot of the pain points that plague the modern tech landscape:
+      </p>
+      <ul>
+        <li>General tendencies to take away user agency (locked down mobile operating systems,
+          restrictions on what users can do with their devices)
+        </li>
+        <li>Focus on hostile monetisation like subscription models</li>
+        <li>Planned obsolescence</li>
+        <li>Intentional vendor lock-in effects</li>
+        <li>Ruthless tracking and data collection mechanisms</li>
+        <li>General superficial viewpoints on free software as inferior/unfit for serious business</li>
+      </ul>
+      <h2>Guiding principles for my own work</h2>
+      <p>
+        What I try to achieve for my own personal projects (i.e. aside from my day job) to counter these tendencies is
+        the following (even though as a relative beginner I am obviously not yet in a position where my work is useful
+        for anyone else):
+      </p>
+      <ul>
+        <li>Publish my work under open source licenses and make them publicly available</li>
+        <li>Use GPL 3 license to allow use by free software projects, but prevent shady developers from
+          creating copycat apps
+        </li>
+        <li>Never use tracking mechanisms</li>
+        <li>Aim for cross-platform solutions where possible/feasible</li>
+        <li>Contribute to existing FOSS projects once my skills allow for that</li>
+      </ul>
+      <div class="divider"></div>
+      <blockquote>
+        <p>Don't be evil - like, for real this time.</p>
+      </blockquote>
+      <p class="italic">- me</p>
+    </section>
+  </div>
+</Layout>
