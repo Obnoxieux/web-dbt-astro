@@ -9,6 +9,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  redirects: {
+    "projects/apps": "/apps",
+    "/projects/apps/germansucks": "/apps/germansucks",
+  },
+
   integrations: [svelte( { extensions: ['.svelte']})],
   env: {
     schema: {
