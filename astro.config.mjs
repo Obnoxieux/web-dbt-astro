@@ -2,6 +2,7 @@
 import {defineConfig, envField} from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import svelte from '@astrojs/svelte';
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
   },
 
   integrations: [svelte( { extensions: ['.svelte']})],
+
   env: {
     schema: {
       // API access
@@ -33,5 +35,9 @@ export default defineConfig({
       PUBLIC_CONTACT_PHONE: envField.string({context: "client", access: "public"}),
       PUBLIC_CONTACT_ADDRESS: envField.string({context: "client", access: "public"})
     }
-  }
+  },
+
+  adapter: node({
+    mode: "standalone"
+  })
 });
