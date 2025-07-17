@@ -9,7 +9,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [svelte()],
+  integrations: [svelte( { extensions: ['.svelte']})],
   env: {
     schema: {
       // API access
