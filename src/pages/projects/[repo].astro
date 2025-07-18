@@ -1,0 +1,45 @@
+---
+export const prerender = false;
+
+import {OpenGraphDefaults} from "../../lib/classes/OpenGraphDefaults";
+import ProjectDetailIntro from "../../components/svelte/projects/ProjectDetailIntro.svelte";
+import ProjectDetailMainContainer from "../../components/svelte/projects/ProjectDetailMainContainer.svelte";
+import ProjectDetailLinkSection from "../../components/svelte/projects/ProjectDetailLinkSection.svelte";
+import {ColorUtility} from "../../lib/classes/ColorUtility";
+import {GitHubClient} from "../../lib/classes/GitHubClient";
+import type {GitHubRepo} from "../../lib/model/GitHubRepo";
+import Layout from "../../layouts/Layout.astro";
+
+const {repo} = Astro.params;
+const request = new GitHubClient();
+
+if (!repo) {
+  Astro.redirect('/projects');
+  return;
+}
+
+const repository: GitHubRepo = await request.loadSingleRepository(request.githubUsername, "repos", repo);
+
+const color = ColorUtility.determineColor(repository.language);
+
+const pageTitle = `Project: ${repository.name}`;
+const description = `${repository.description ?? 'Project details at a glance'}`;
+
+const metaTags = {
+  title: pageTitle,
+  description: description,
+  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+};
+---
+
+<Layout title={pageTitle} description={description} metaTags={metaTags}>
+  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+    <div class="flex flex-col gap-3">
+      <ProjectDetailIntro repo={repository}/>
+      <div class="divider"></div>
+      <ProjectDetailMainContainer repo={repository} color={color}/>
+      <div class="divider col-span-4"></div>
+      <ProjectDetailLinkSection repo={repository} color={color}/>
+    </div>
+  </div>
+</Layout>

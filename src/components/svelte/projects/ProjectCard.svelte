@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {GitHubRepo} from "$lib/model/GitHubRepo";
+    import type {GitHubRepo} from "../../../lib/model/GitHubRepo.ts";
 
     interface Props {
         repo: GitHubRepo;
@@ -7,7 +7,6 @@
     }
 
     let { repo, color }: Props = $props();
-    const slug = $derived(repo.name)
 
     /**
      * Tailwind CSS class names to please its compiler
@@ -19,9 +18,9 @@
     <div class="card-body">
         <h2 class="card-title">{repo.name}</h2>
         <p>{repo.description}</p>
-        <div class="card-actions justify-between items-center">
+        <div class="card-actions justify-between items-center flex-nowrap">
             <div class="badge badge-lg badge-{color} dark:badge-outline">{repo.language}</div>
-            <a href="projects/{slug}" class="btn btn-outline" data-sveltekit-preload-data>Details</a>
+            <a href="projects/{repo.name}" class="btn btn-outline">Details</a>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {GitHubRepo} from "$lib/model/GitHubRepo";
+    import type {GitHubRepo} from "../../../lib/model/GitHubRepo.ts";
 
     interface Props {
         repo: GitHubRepo;
