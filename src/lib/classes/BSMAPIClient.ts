@@ -2,7 +2,7 @@ import {AbstractAPIClient} from "./AbstractAPIClient.ts";
 import type {StatsType} from "../enums/StatsType.ts";
 import type {AbstractStatisticsEntry} from "../model/AbstractStatisticsEntry.ts";
 
-export class BSMClient extends AbstractAPIClient {
+export class BSMAPIClient extends AbstractAPIClient {
     API_URL = "https://bsm.baseball-softball.de"
     protected readonly bsmPersonID: number = 76222
     protected readonly defaultSeason = new Date().getFullYear()

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {BattingStatisticsEntry} from "$lib/model/BattingStatisticsEntry";
+    import type {BattingStatisticsEntry} from "../../../lib/model/BattingStatisticsEntry.ts";
 
     interface Props {
         statsBatting: BattingStatisticsEntry;

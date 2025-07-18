@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type {FieldingStatisticsEntry} from "$lib/model/FieldingStatisticsEntry";
+    import type {FieldingStatisticsEntry} from "../../../lib/model/FieldingStatisticsEntry.ts";
 
     interface Props {
         statsFielding: FieldingStatisticsEntry;

@@ -1,13 +1,13 @@
 <script lang="ts">
-    import type {BattingStatisticsEntry} from "$lib/model/BattingStatisticsEntry";
-    import type {PitchingStatisticsEntry} from "$lib/model/PitchingStatisticsEntry";
-    import {StatsType} from "$lib/enums/StatsType";
     import BattingStats from "./BattingStats.svelte";
     import PitchingStats from "./PitchingStats.svelte";
-    import type {FieldingStatisticsEntry} from "$lib/model/FieldingStatisticsEntry";
     import FieldingStats from "./FieldingStats.svelte";
     import {slide} from 'svelte/transition';
     import {cubicIn} from "svelte/easing";
+    import type {BattingStatisticsEntry} from "../../../lib/model/BattingStatisticsEntry.ts";
+    import type {PitchingStatisticsEntry} from "../../../lib/model/PitchingStatisticsEntry.ts";
+    import type {FieldingStatisticsEntry} from "../../../lib/model/FieldingStatisticsEntry.ts";
+    import {StatsType} from "../../../lib/enums/StatsType.ts";
 
     interface Props {
         statsBatting: BattingStatisticsEntry;
@@ -34,7 +34,7 @@
             <h2 class="h2 mb-2">My Stats (career)</h2>
             <p>Baseball is a sport all about numbers. These are mine. Data is imported automatically via the <a class="link" href="https://bsm.baseball-softball.de/api_docs" target="_blank">API of the German Baseball & Softball Association</a>.</p>
         </div>
-        <div class="tabs tabs-boxed flex justify-around my-2 shadow-md">
+        <div class="tabs tabs-box flex justify-around my-2 shadow-md">
             <button onclick={() => changeStatsTab(StatsType.batting)} class="tab grow {activeStatsTab === StatsType.batting ? 'tab-active' : ''}">Batting</button>
             <button onclick={() => changeStatsTab(StatsType.pitching)} class="tab grow {activeStatsTab === StatsType.pitching ? 'tab-active' : ''}">Pitching</button>
             <button onclick={() => changeStatsTab(StatsType.fielding)} class="tab grow {activeStatsTab === StatsType.fielding ? 'tab-active' : ''}">Fielding</button>
@@ -55,7 +55,10 @@
 </div>
 
 <style lang="postcss">
-    .tabs-boxed .tab-active {
-        @apply bg-[#ba0c2f] text-white !important;
+    .tabs-box {
+        .tab-active {
+            background-color: var(--color-skylarks-red);
+            color: white !important;
+        }
     }
 </style>

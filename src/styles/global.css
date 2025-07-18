@@ -41,6 +41,7 @@
   --color-kotlin: #34d399;
   --color-typescript: #ea580c;
   --color-php: #f59e0b;
+  --color-skylarks-red: #ba0c2f;
 }
 
 /*
@@ -70,6 +71,7 @@
   --color-typescript: #ea580c;
   /* Tailwind Amber-500 */
   --color-php: #f59e0b;
+  --color-skylarks-red: #ba0c2f;
 }
 
 .hljs {

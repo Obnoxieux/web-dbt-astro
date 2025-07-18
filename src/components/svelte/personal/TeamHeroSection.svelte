@@ -11,7 +11,7 @@
 
 <style>
     .btn-skylarks {
-        background-color: #ba0c2f !important;
+        background-color: var(--color-skylarks-red) !important;
         color: white !important;
     }
 </style>
