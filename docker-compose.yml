@@ -1,0 +1,29 @@
+services:
+  frontend:
+    image: obnoxieux/web-dbt:latest
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.web-dbt.rule=Host(`obnx.dev`)"
+      - "traefik.http.routers.web-dbt.entrypoints=websecure"
+      - "traefik.http.routers.web-dbt.tls.certresolver=letsEncrypt"
+
+    # why no stack.env: https://github.com/portainer/portainer/issues/10902
+    environment:
+      - "BSM_API_KEY=${BSM_API_KEY}"
+      - "GITHUB_ACCESS_TOKEN=${GITHUB_ACCESS_TOKEN}"
+      - "SMTP_SERVER=${SMTP_SERVER}"
+      - "SMTP_PORT=${SMTP_PORT}"
+      - "SMTP_USER=${SMTP_USER}"
+      - "SMTP_PASS=${SMTP_PASS}"
+      - "SMTP_MAIL_TO_ADDRESS=${SMTP_MAIL_TO_ADDRESS}"
+      - "SMTP_MAIL_FROM_ADDRESS=${SMTP_MAIL_FROM_ADDRESS}"
+      - "PUBLIC_CONTACT_EMAIL_ADDRESS=${PUBLIC_CONTACT_EMAIL_ADDRESS}"
+      - "PUBLIC_CONTACT_PHONE=${PUBLIC_CONTACT_PHONE}"
+      - "PUBLIC_CONTACT_ADDRESS=${PUBLIC_CONTACT_ADDRESS}"
+
+networks:
+  proxy:
+    external: true
