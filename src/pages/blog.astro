@@ -1,0 +1,35 @@
+---
+import {getCollection} from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import {OpenGraphDefaults} from "../lib/classes/OpenGraphDefaults";
+
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const pageTitle = 'Garbage Collection';
+const description = 'Code shenanigans by a self-taught underachiever.';
+
+const metaTags = {
+  title: pageTitle,
+  description: description,
+  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+};
+---
+
+<Layout title={pageTitle} description={description} metaTags={metaTags}>
+
+  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+    <div class="prose mb-6">
+      <h1>Garbage Collection</h1>
+      <p>
+        Programming blog by a dude with no business doing it.
+      </p>
+      <ul>
+        {posts.map(post => (
+                <li><a href={`/blog/${post.id}`}>{post.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Layout>
