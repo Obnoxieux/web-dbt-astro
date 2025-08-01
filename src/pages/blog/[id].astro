@@ -1,17 +1,25 @@
 ---
-import { getCollection, render } from 'astro:content';
+import {getCollection, render} from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map(post => ({
-    params: { id: post.id },
-    props: { post },
+    params: {id: post.id},
+    props: {post},
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const {post} = Astro.props;
+const {Content} = await render(post);
 ---
 
-<h1>{post.data.title}</h1>
-<Content />
+<Layout title={post.data.title} description={post.data.description}>
+
+  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+    <div class="prose">
+      <h1>{post.data.title}</h1>
+      <Content/>
+    </div>
+  </div>
+</Layout>
