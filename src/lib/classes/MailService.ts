@@ -3,16 +3,19 @@ import validator from 'validator';
 import type SMTPTransport from "nodemailer/lib/smtp-transport";
 import type {ContactEmail} from "../model/ContactEmail.ts";
 import {
-  SMTP_MAIL_FROM_ADDRESS,
-  SMTP_MAIL_TO_ADDRESS,
-  SMTP_PASS,
-  SMTP_PORT,
-  SMTP_SERVER,
-  SMTP_USER
+  getSecret,
 } from "astro:env/server";
 
 export class MailService {
-  private readonly FROM_ADDRESS = `Webmaster dbt <${SMTP_MAIL_FROM_ADDRESS}>`;
+  private readonly FROM_ADDRESS = `Webmaster dbt <${getSecret("SMTP_MAIL_FROM_ADDRESS")}>`;  
+
+  constructor() {
+    const valid = this.validateEnvironment();
+
+    if (!valid) {
+      throw new Error("Environment variables are not set correctly");
+    }
+  }
 
   /**
    * @throws Error
@@ -46,21 +49,50 @@ export class MailService {
       message: validator.escape(message)
     };
   }
+  
+  private validateEnvironment(): boolean {
+    const requiredEnvVars = [
+      "SMTP_MAIL_FROM_ADDRESS",
+      "SMTP_MAIL_TO_ADDRESS",
+      "SMTP_PORT",
+      "SMTP_SERVER"
+    ];
+
+    for (const envVar of requiredEnvVars) {
+      const value = getSecret(envVar);
+      if (!value) {
+        console.error(`Required environment variable ${envVar} is not set.`);
+        return false;
+      }
+    }
+
+    // SMTP_USER and SMTP_PASS are optional for local testing, but if one is provided, both must be
+    const smtpUser = getSecret("SMTP_USER");
+    const smtpPass = getSecret("SMTP_PASS");
+
+    if ((smtpUser && !smtpPass) || (!smtpUser && smtpPass)) {
+      console.error("Both SMTP_USER and SMTP_PASS must be provided together.");
+      return false;
+    }
+    return true;
+  }
 
   async sendEmail(data: FormData) {
     const contactEmail = this.validateAndSanitizeInput(data);
 
     const options: SMTPTransport.Options = {
-      host: SMTP_SERVER,
-      port: parseInt(SMTP_PORT),
+      host: getSecret("SMTP_SERVER"),
+      port: parseInt(<string>getSecret("SMTP_PORT")),
     };
 
     // local testing (sendmail/Mailpit) does not use auth
-    if (SMTP_USER && SMTP_PASS) {
+    const smtpUser = getSecret("SMTP_USER");
+    const smtpPass = getSecret("SMTP_PASS");
+    if (smtpUser && smtpPass) {
       options.secure = true;
       options.auth = {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       };
     }
     const transporter = nodemailer.createTransport(options);
@@ -68,7 +100,7 @@ export class MailService {
     await transporter.sendMail({
       from: this.FROM_ADDRESS,
       replyTo: contactEmail.email,
-      to: SMTP_MAIL_TO_ADDRESS,
+      to: getSecret("SMTP_MAIL_TO_ADDRESS"),
       subject: "New email via web-dbt",
       text: `From: ${contactEmail.fromName}/${contactEmail.email}, reason: ${contactEmail.reason}. 
             Body text:\n\n ${contactEmail.message}`
