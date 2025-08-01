@@ -1,12 +1,15 @@
 FROM node:22-alpine AS base
 WORKDIR /app
 
+RUN npm i -g corepack # workaround, corepack should enable on its own
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
 # By copying only the package.json and package-lock.json here, we ensure that the following `-deps` steps are independent of the source code.
 # Therefore, the `-deps` steps will be skipped if only the source code changes.
 COPY package.json pnpm-lock.yaml ./
 
 FROM base AS prod-deps
-RUN pnpm install --omit=dev
+RUN pnpm install --frozen-lockfile
 
 FROM base AS build-deps
 RUN pnpm install
