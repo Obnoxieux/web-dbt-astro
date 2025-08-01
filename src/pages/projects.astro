@@ -9,7 +9,11 @@ import ProjectExampleSection from "../components/svelte/projects/ProjectExampleS
 
 const client = new GitHubClient();
 
-const repos: GitHubRepo[] = await client.loadRepositoriesForUser(client.githubUsername, "users");
+let repos: GitHubRepo[] = await client.loadRepositoriesForUser(client.githubUsername, "users");
+
+if (!Array.isArray(repos) || repos.length === 0) {
+  repos = []
+}
 
 let languages: string[] = [];
 repos.forEach((repo: GitHubRepo) => {
