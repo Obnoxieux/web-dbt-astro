@@ -1,6 +1,6 @@
 import {AbstractAPIClient} from "./AbstractAPIClient.ts";
 import type {GitHubRepo} from "../model/GitHubRepo.ts";
-import {GITHUB_ACCESS_TOKEN} from "astro:env/server";
+import {getSecret} from "astro:env/server";
 
 export class GitHubClient extends AbstractAPIClient {
     protected readonly API_URL = "https://api.github.com"
@@ -14,7 +14,7 @@ export class GitHubClient extends AbstractAPIClient {
 
     protected setRequestOptions(): RequestInit {
         const headers = new Headers()
-        headers.append("Authorization", `Bearer ${GITHUB_ACCESS_TOKEN}`)
+        headers.append("Authorization", `Bearer ${getSecret("GITHUB_ACCESS_TOKEN")}`)
         headers.append("Accept", "application/vnd.github+json")
 
         return {

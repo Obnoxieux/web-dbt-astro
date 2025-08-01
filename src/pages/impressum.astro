@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {OpenGraphDefaults} from '../lib/classes/OpenGraphDefaults';
-import {PUBLIC_CONTACT_ADDRESS, PUBLIC_CONTACT_EMAIL_ADDRESS, PUBLIC_CONTACT_PHONE} from 'astro:env/client';
+import {getSecret} from 'astro:env/server';
 
 const pageTitle = 'Impressum';
 const description = 'Legal information about this website.';
@@ -13,9 +13,9 @@ const metaTags = {
 };
 
 // Get contact information from environment variables
-const contactEmail = PUBLIC_CONTACT_EMAIL_ADDRESS;
-const contactPhone = PUBLIC_CONTACT_PHONE;
-const contactAddress = PUBLIC_CONTACT_ADDRESS;
+const contactEmail = getSecret("PUBLIC_CONTACT_EMAIL_ADDRESS");
+const contactPhone = getSecret("PUBLIC_CONTACT_PHONE");
+const contactAddress = getSecret("PUBLIC_CONTACT_ADDRESS");
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
