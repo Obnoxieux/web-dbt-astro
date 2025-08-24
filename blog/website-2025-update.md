@@ -1,7 +1,7 @@
 ---
-title: 'Website 2025 Update'
-author: 'David'
-description: 'Read about the groundbreaking changes to my personal website that nobody visits.'
+title: "Website 2025 Update"
+author: "David"
+description: "Read about the groundbreaking changes to my personal website that nobody visits."
 pubDate: 2025-08-01
 ---
 
@@ -10,14 +10,14 @@ I already have. So, naturally, I decided to move this website to a new stack for
 
 ## History
 
-Originally built in 2023 as my first real dip into personal web development, I chose 
+Originally built in 2023 as my first real dip into personal web development, I chose
 [SvelteKit](https://svelte.dev/docs/kit/introduction#What-is-SvelteKit) as my JS framework of the day. Because I had no clue about
 CSS back then, I just slapped [DaisyUI](https://daisyui.com) on it and called it a day.
 
 ## New kid on the block
 
-Fast-forward to 2025 — like every JS developer, I have developed a love-hate-hate-relationship with the JS ecosystem dependency hell, but cannot be bothered 
-to rewrite the whole thing from scratch. Since you should always replace your site that is working perfectly fine with 
+Fast-forward to 2025 — like every JS developer, I have developed a love-hate-hate-relationship with the JS ecosystem dependency hell, but cannot be bothered
+to rewrite the whole thing from scratch. Since you should always replace your site that is working perfectly fine with
 the newest trendy JS framework of the day, I went ahead and dove right in.
 
 I always wanted to experiment with different frontend stacks, so [Astro](https://astro.build)
@@ -43,7 +43,7 @@ and tell me what a sorry excuse for a web developer I am.
 
 ## Shoutout of the day
 
-Go read what my brother (a real developer) is doing with AI that is not slop[^1]: 
+Go read what my brother (a real developer) is doing with AI that is not slop[^1]:
 [Link to University of Bielefeld website](https://aktuell.uni-bielefeld.de/2025/07/08/medizinische-diagnosen-mit-ki-besser-und-erklaerbar-machen/)
 
 If you can't read German, zen learn ze language or use a translator.
