@@ -1,58 +1,71 @@
 ---
-export const prerender = false
+export const prerender = false;
 
-import {OpenGraphDefaults} from "../lib/classes/OpenGraphDefaults";
+import { OpenGraphDefaults } from "../lib/classes/OpenGraphDefaults";
 import Layout from "../layouts/Layout.astro";
 import BaseballTeaser from "../components/svelte/personal/BaseballTeaser.svelte";
 import BaseballStatsSection from "../components/svelte/personal/BaseballStatsSection.svelte";
 import TeamHeroSection from "../components/svelte/personal/TeamHeroSection.svelte";
-import {BSMAPIClient} from "../lib/classes/BSMAPIClient";
-import {StatsType} from "../lib/enums/StatsType";
-import type {BattingStatisticsEntry} from "../lib/model/BattingStatisticsEntry";
-import type {PitchingStatisticsEntry} from "../lib/model/PitchingStatisticsEntry";
-import type {FieldingStatisticsEntry} from "../lib/model/FieldingStatisticsEntry";
+import { BSMAPIClient } from "../lib/classes/BSMAPIClient";
+import { StatsType } from "../lib/enums/StatsType";
+import type { BattingStatisticsEntry } from "../lib/model/BattingStatisticsEntry";
+import type { PitchingStatisticsEntry } from "../lib/model/PitchingStatisticsEntry";
+import type { FieldingStatisticsEntry } from "../lib/model/FieldingStatisticsEntry";
 
 const client = new BSMAPIClient();
 
-const statsBatting: BattingStatisticsEntry = await client.loadPersonalStatistics(StatsType.batting);
-const statsPitching: PitchingStatisticsEntry = await client.loadPersonalStatistics(StatsType.pitching);
-const statsFielding: FieldingStatisticsEntry = await client.loadPersonalStatistics(StatsType.fielding);
+const statsBatting: BattingStatisticsEntry =
+    await client.loadPersonalStatistics(StatsType.batting);
+const statsPitching: PitchingStatisticsEntry =
+    await client.loadPersonalStatistics(StatsType.pitching);
+const statsFielding: FieldingStatisticsEntry =
+    await client.loadPersonalStatistics(StatsType.fielding);
 
 const stats = {
-  batting: statsBatting,
-  pitching: statsPitching,
-  fielding: statsFielding,
+    batting: statsBatting,
+    pitching: statsPitching,
+    fielding: statsFielding,
 };
 
-const pageTitle = 'Private Life';
-const description = 'The stuff I do when I\'m not coding aka the thing we call life.';
+const pageTitle = "Private Life";
+const description =
+    "The stuff I do when I'm not coding aka the thing we call life.";
 
 const metaTags = {
-  title: pageTitle,
-  description: description,
-  openGraph: OpenGraphDefaults.getOpenGraphObject(Astro.url, pageTitle, description),
+    title: pageTitle,
+    description: description,
+    openGraph: OpenGraphDefaults.getOpenGraphObject(
+        Astro.url,
+        pageTitle,
+        description,
+    ),
 };
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
-  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%] mb-20">
-    <div class="prose">
-      <h1>Private Life</h1>
-      <p>The stuff I do when I'm not coding aka the thing we call life.</p>
+    <div
+        class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%] mb-20"
+    >
+        <div class="prose">
+            <h1>Private Life</h1>
+            <p>
+                The stuff I do when I'm not coding aka the thing we call life.
+            </p>
+        </div>
+        <div class="divider"></div>
+
+        <BaseballTeaser />
+
+        <div class="divider"></div>
+
+        <BaseballStatsSection
+            client:load
+            statsBatting={stats.batting}
+            statsPitching={stats.pitching}
+            statsFielding={stats.fielding}
+        />
+        <div class="divider my-8"></div>
+
+        <TeamHeroSection />
     </div>
-    <div class="divider"></div>
-    
-    <BaseballTeaser />
-
-    <div class="divider"></div>
-
-    <BaseballStatsSection 
-      client:load 
-      statsBatting={stats.batting}
-      statsPitching={stats.pitching}
-      statsFielding={stats.fielding}
-    />
-    <div class="divider my-8"></div>
-    <TeamHeroSection />
-  </div>
 </Layout>
