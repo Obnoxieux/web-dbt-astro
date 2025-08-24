@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from "astro/config";
+import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
 import node from "@astrojs/node";
@@ -19,10 +19,7 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      themes: {
-        light: "one-light",
-        dark: "one-dark-pro",
-      },
+      theme: "one-dark-pro",
     },
   },
 

@@ -1,0 +1,23 @@
+---
+import { Code } from "astro:components";
+
+interface Props {
+    lang: string;
+    code: string;
+    theme?: string;
+}
+const { lang, code, theme = "one-dark-pro" } = Astro.props;
+---
+
+<div class="code-block col-span-2 min-h-[640px]">
+    <Code lang={lang} code={code} theme={theme} />
+</div>
+
+<style>
+    .code-block {
+        pre {
+            border-radius: 0.5rem;
+            padding: 0 0.5rem 0.5rem;
+        }
+    }
+</style>
