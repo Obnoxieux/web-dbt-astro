@@ -1,47 +1,49 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "./code.css";
+@import "./typography.css";
 
 @plugin '@tailwindcss/typography';
 
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-  --color-primary: #c2410c;
-  --color-primary-focus: #9a3412;
-  --color-primary-content: #ffffff;
-  --color-secondary: #047857;
-  --color-secondary-focus: #065f46;
-  --color-secondary-content: #f3f4f6;
-  --color-accent: #2563eb;
-  --color-accent-focus: #1d4ed8;
-  --color-accent-content: #f3f4f6;
-  --color-warning: #d97706;
-  --color-warning-focus: #b45309;
-  --color-warning-content: #ffffff;
+    name: "light";
+    default: true;
+    --color-primary: #c2410c;
+    --color-primary-focus: #9a3412;
+    --color-primary-content: #ffffff;
+    --color-secondary: #047857;
+    --color-secondary-focus: #065f46;
+    --color-secondary-content: #f3f4f6;
+    --color-accent: #2563eb;
+    --color-accent-focus: #1d4ed8;
+    --color-accent-content: #f3f4f6;
+    --color-warning: #d97706;
+    --color-warning-focus: #b45309;
+    --color-warning-content: #ffffff;
 }
 
 @plugin "daisyui/theme" {
-  name: "dark";
-  prefersdark: true;
-  --color-primary: #ea580c;
-  --color-primary-focus: #c2410c;
-  --color-secondary: #34d399;
-  --color-secondary-focus: #10b981;
-  --color-secondary-content: #111827;
-  --color-accent: #3B82F6;
-  --color-accent-focus: #2563eb;
-  --color-accent-content: #f3f4f6;
-  --color-warning: #f59e0b;
-  --color-warning-focus: #d97706;
-  --color-warning-content: #111827;
+    name: "dark";
+    prefersdark: true;
+    --color-primary: #ea580c;
+    --color-primary-focus: #c2410c;
+    --color-secondary: #34d399;
+    --color-secondary-focus: #10b981;
+    --color-secondary-content: #111827;
+    --color-accent: #3b82f6;
+    --color-accent-focus: #2563eb;
+    --color-accent-content: #f3f4f6;
+    --color-warning: #f59e0b;
+    --color-warning-focus: #d97706;
+    --color-warning-content: #111827;
 }
 
 @theme {
-  --color-swift: #3b82f6;
-  --color-kotlin: #34d399;
-  --color-typescript: #ea580c;
-  --color-php: #f59e0b;
-  --color-skylarks-red: #ba0c2f;
+    --color-swift: #3b82f6;
+    --color-kotlin: #34d399;
+    --color-typescript: #ea580c;
+    --color-php: #f59e0b;
+    --color-skylarks-red: #ba0c2f;
 }
 
 /*
@@ -53,57 +55,33 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }
 
 :root {
-  /* Tailwind Blue-500 */
-  --color-swift: #3B82F6;
-  /* Tailwind Emerald-400 */
-  --color-kotlin: #34d399;
-  /* Tailwind Orange-600 */
-  --color-typescript: #ea580c;
-  /* Tailwind Amber-500 */
-  --color-php: #f59e0b;
-  --color-skylarks-red: #ba0c2f;
-}
-
-.hljs {
-  background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity))) !important;
-}
-
-.h1 {
-  @apply text-3xl sm:text-4xl font-extrabold;
-}
-
-.h2 {
-  @apply text-xl sm:text-2xl font-extrabold;
-}
-
-.subheader {
-  @apply font-semibold  text-xl;
-}
-
-.hero {
-  @apply min-h-[35%];
-}
-
-.mini-headline {
-  @apply font-extrabold;
+    /* Tailwind Blue-500 */
+    --color-swift: #3b82f6;
+    /* Tailwind Emerald-400 */
+    --color-kotlin: #34d399;
+    /* Tailwind Orange-600 */
+    --color-typescript: #ea580c;
+    /* Tailwind Amber-500 */
+    --color-php: #f59e0b;
+    --color-skylarks-red: #ba0c2f;
 }
 
 .color-github-logo {
-  @apply fill-black;
+    @apply fill-black;
 }
 
 @media (prefers-color-scheme: dark) {
-  .color-github-logo {
-    @apply fill-white;
-  }
+    .color-github-logo {
+        @apply fill-white;
+    }
 }
