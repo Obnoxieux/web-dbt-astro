@@ -85,3 +85,7 @@
         @apply fill-white;
     }
 }
+
+@view-transition {
+    navigation: auto;
+}
