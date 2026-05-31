@@ -1,6 +1,4 @@
 ---
-export const prerender = false;
-
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/astro/contact/ContactForm.astro';
 import { OpenGraphDefaults } from '../lib/classes/OpenGraphDefaults';
@@ -16,11 +14,10 @@ const metaTags = {
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
-  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
+  <div class="min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
     <div class="prose mb-6">
       <h1>Contact me</h1>
-      <p>Please use the contact form below to send me a message.</p>
-      <p>I am currently not available for job offers or freelance work.</p>
+      <p>Please use my masterfully obfuscated email address below to send me a message.</p>
     </div>
     <div class="divider"></div>
 
