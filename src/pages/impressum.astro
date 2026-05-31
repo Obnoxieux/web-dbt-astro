@@ -3,8 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import {OpenGraphDefaults} from '../lib/classes/OpenGraphDefaults';
 import {getSecret} from 'astro:env/server';
 
-export const prerender = false
-
 const pageTitle = 'Impressum';
 const description = 'Legal information about this website.';
 
@@ -28,7 +26,7 @@ const contactAddress = getSecret("PUBLIC_CONTACT_ADDRESS");
       <p>David Battefeld<br/>
         {contactAddress}</p>
       <h2>Kontakt</h2>
-      <p>Telefon: {contactPhone}<br/>
+      <p>
         E-Mail: <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
       <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
     </div>
