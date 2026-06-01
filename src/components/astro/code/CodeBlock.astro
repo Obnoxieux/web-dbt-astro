@@ -9,7 +9,7 @@ interface Props {
 const { lang, code, theme = "one-dark-pro" } = Astro.props;
 ---
 
-<div class="code-block col-span-2 min-h-[640px]">
+<div class="code-block col-span-2">
     <Code lang={lang} code={code} theme={theme} />
 </div>
 
