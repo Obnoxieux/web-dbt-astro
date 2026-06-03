@@ -1,8 +1,9 @@
 ---
+import type { CodeLanguage } from "astro";
 import { Code } from "astro:components";
 
 interface Props {
-  lang: string;
+  lang: CodeLanguage;
   code: string;
   theme?: string;
 }
@@ -10,6 +11,7 @@ const { lang, code, theme = "one-dark-pro" } = Astro.props;
 ---
 
 <div class="code-block col-span-2">
+  {/*@ts-ignore */}
   <Code lang={lang} code={code} theme={theme} />
 </div>
 

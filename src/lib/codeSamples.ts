@@ -1,5 +1,7 @@
+import type { CodeLanguage } from "astro";
+
 export type CodeSampleItem = {
-  id: string;
+  id: CodeLanguage;
   name: string;
   sample: string;
 };
