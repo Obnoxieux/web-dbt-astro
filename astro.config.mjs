@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
 
+import solidJs from "@astrojs/solid-js";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -14,7 +16,7 @@ export default defineConfig({
     "/projects/apps/germansucks": "/apps/germansucks",
   },
 
-  integrations: [svelte({ extensions: [".svelte"] })],
+  integrations: [svelte({ extensions: [".svelte"] }), solidJs()],
 
   markdown: {
     shikiConfig: {
