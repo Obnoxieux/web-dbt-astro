@@ -17,8 +17,9 @@ const languages = defineCollection({
   loader: file("./src/data/languages.toml"),
   schema: ({ image }) =>
     z.object({
+      id: z.string(),
       name: z.string(),
-      sample: z.string().optional(),
+      sample: z.string(),
       icon: image(),
     }),
 });

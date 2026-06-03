@@ -26,9 +26,9 @@ const { codeSamples } = Astro.props;
             codeSamples.map((codeSample, index) => (
               <button
                 class={`tab ${index === 0 ? "tab-active" : ""}`}
-                data-tab={codeSample.languageType}
+                data-tab={codeSample.id}
               >
-                {codeSample.languageType}
+                {codeSample.name}
               </button>
             ))
           }
@@ -40,11 +40,11 @@ const { codeSamples } = Astro.props;
           codeSamples.map((codeSample, index) => (
             <div
               class={`code-content ${index === 0 ? "active" : ""}`}
-              data-lang={codeSample.languageType}
+              data-lang={codeSample.id}
             >
               <CodeBlock
-                lang={codeSample.languageType}
-                code={codeSample.text}
+                lang={codeSample.id}
+                code={codeSample.sample}
               />
             </div>
           ))
