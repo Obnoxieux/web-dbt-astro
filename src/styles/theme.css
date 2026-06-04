@@ -7,9 +7,9 @@
   --primary-foreground: light-dark(#fafafa, #18181b);
   --secondary: light-dark(#f4f4f5, #27272a);
   --secondary-foreground: light-dark(#574747, #fafafa);
-  --muted: light-dark(#f4f4f5, #27272a);
+  --muted: light-dark(#f4f4f5, #191e24);
   --muted-foreground: light-dark(#71717a, #a1a1aa);
-  --faint: light-dark(#fafafa, #1e1e21);
+  --faint: light-dark(#fafafa, #15191e);
   --faint-foreground: light-dark(#a1a1aa, #71717a);
   --accent: light-dark(#f4f4f5, #27272a);
   --danger: light-dark(#d32f2f, #f4807b);
