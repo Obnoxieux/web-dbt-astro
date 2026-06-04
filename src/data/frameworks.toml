@@ -1,0 +1,27 @@
+[compose]
+id = "compose"
+name = "Jetpack Compose"
+description = "The modern declarative UI toolkit by Google for Android and  multiplatform."
+icon = "../assets/frameworks/jetpack_compose_icon.png"
+color = "#3ddc84"
+
+[swiftui]
+id = "swiftui"
+name = "SwiftUI"
+description = "Declarative UI framework that allows the creation of apps for all Apple platforms with maximum code reusability."
+icon = "../assets/frameworks/swiftui-og.png"
+color = "#006dfd"
+
+[svelte]
+id = "svelte"
+name = "Svelte"
+description = "Framework for JavaScript / TypeScript for beautiful and fast web applications that run in every modern browser."
+icon = "../assets/frameworks/svelte.svg"
+color = "#ff3e00"
+
+[typo3]
+id = "typo3"
+name = "TYPO3"
+description = "Flexible open-source enterprise CMS, suitable for every website ranging from small representations for individuals to full-scale multilingual content hubs."
+icon = "../assets/frameworks/TYPO3.svg"
+color = "#ff8700"

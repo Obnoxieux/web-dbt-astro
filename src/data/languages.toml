@@ -1,6 +1,7 @@
 [swift]
 id = "swift"
 name = "Swift"
+color = "#f05138"
 sample = """
 
 class SoftwareEngineer {
@@ -30,6 +31,7 @@ icon = "../assets/languages/swift.svg"
 [kotlin]
 id = "kotlin"
 name = "Kotlin"
+color = "#a97bff"
 sample = """
 
 class SoftwareEngineer(name: String, specialty: String) {
@@ -54,6 +56,7 @@ icon = "../assets/languages/kotlin.svg"
 [ts]
 id = "ts"
 name = "TypeScript"
+color = "#3178c6"
 sample = """
 
 class SoftwareEngineer {
@@ -77,6 +80,7 @@ icon = "../assets/languages/ts.svg"
 [php]
 id = "php"
 name = "PHP"
+color = "#4f5d95"
 sample = """
 
 class SoftwareEngineer {

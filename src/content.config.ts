@@ -21,6 +21,7 @@ const languages = defineCollection({
       name: z.string(),
       sample: z.string(),
       icon: image(),
+      color: z.string(),
     }),
 });
 
@@ -28,9 +29,11 @@ const frameworks = defineCollection({
   loader: file("./src/data/frameworks.toml"),
   schema: ({ image }) =>
     z.object({
+      id: z.string(),
       name: z.string(),
       description: z.string().optional(),
       icon: image(),
+      color: z.string(),
     }),
 });
 
