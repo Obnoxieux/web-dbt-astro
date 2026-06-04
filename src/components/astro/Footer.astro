@@ -1,52 +1,58 @@
----
----
+<footer class="grid">
+  <div class="items-center">
+    <p>Made with 🧡 in Berlin</p>
+  </div>
 
-<footer
-    class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-base-200 text-base-content place-items-center p-6"
->
-    <div class="items-center grid-flow-col">
-        <p>Made with 🧡 in Berlin</p>
-    </div>
+  <div class="items-center flex gap-4">
+    <a title="go to imprint page" href="/impressum"
+      >Impressum</a
+    >
+    <a title="go to privacy page" href="/privacy"
+      >Datenschutzerklärung</a
+    >
+  </div>
 
-    <div class="items-center flex gap-4">
-        <a title="go to imprint page" href="/impressum" class="link link-hover"
-            >Impressum</a
-        >
-        <a title="go to privacy page" href="/privacy" class="link link-hover"
-            >Datenschutzerklärung</a
-        >
-    </div>
-
-    <div class="icon-container">
-        <a
-            href="https://codeberg.org/obnoxieux"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="to my profile at codeberg.org"
-        >
-            <img width="30" src="/Codeberg-logo.svg" alt="Codeberg logo"></img>
-        </a>
-
-        <a
-            href="https://git.berlinskylarks.de/obnoxieux"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="to my profile at the Berlin Skylarks Forge"
-        >
-            <img width="20" src="/Forgejo-icon.svg" alt="Forgejo logo"></img>
-        </a>
-    </div>
+  <div class="icon-container">
+    <a
+      href="https://codeberg.org/obnoxieux"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="to my profile at codeberg.org"
+    >
+      <img width="30" src="/Codeberg-logo.svg" alt="Codeberg logo" /></a
+    >
+    <a
+      href="https://git.berlinskylarks.de/obnoxieux"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="to my profile at the Berlin Skylarks Forge"
+    >
+      <img width="20" src="/Forgejo-icon.svg" alt="Forgejo logo" /></a
+    >
+  </div>
 </footer>
 
 <style>
-    .icon-container {
-      display: flex;
-      gap: calc(var(--spacing) * 3);
-      align-items: center;
-      
-      @media (width >= 48rem) {
-        justify-self: end;
-        margin-inline-end: calc(var(--spacing) * 4);
-      } 
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    place-items: center;
+    padding: 1.5em;
+
+    @media (width >= 48rem) {
+      grid-template-columns: 1fr 1fr 1fr;
     }
+  }
+
+  .icon-container {
+    display: flex;
+    gap: calc(var(--spacing) * 3);
+    align-items: center;
+
+    @media (width >= 48rem) {
+      justify-self: end;
+      margin-inline-end: calc(var(--spacing) * 4);
+    }
+  }
 </style>
