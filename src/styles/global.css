@@ -1,13 +1,7 @@
-@import "tailwindcss";
 @import "./code.css";
 @import "./typography.css";
 
-@plugin '@tailwindcss/typography';
-
-@plugin "daisyui";
-@plugin "daisyui/theme" {
-    name: "light";
-    default: true;
+:root {
     --color-primary: #c2410c;
     --color-primary-focus: #9a3412;
     --color-primary-content: #ffffff;
@@ -22,9 +16,7 @@
     --color-warning-content: #ffffff;
 }
 
-@plugin "daisyui/theme" {
-    name: "dark";
-    prefersdark: true;
+:root {
     --color-primary: #ea580c;
     --color-primary-focus: #c2410c;
     --color-secondary: #34d399;
@@ -38,14 +30,6 @@
     --color-warning-content: #111827;
 }
 
-@theme {
-    --color-swift: #3b82f6;
-    --color-kotlin: #34d399;
-    --color-typescript: #ea580c;
-    --color-php: #f59e0b;
-    --color-skylarks-red: #ba0c2f;
-}
-
 :root {
     /* Tailwind Blue-500 */
     --color-swift: #3b82f6;
@@ -56,16 +40,6 @@
     /* Tailwind Amber-500 */
     --color-php: #f59e0b;
     --color-skylarks-red: #ba0c2f;
-}
-
-.color-github-logo {
-    fill: black;
-}
-
-@media (prefers-color-scheme: dark) {
-    .color-github-logo {
-        fill: white;
-    }
 }
 
 @view-transition {
