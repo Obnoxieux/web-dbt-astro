@@ -1,7 +1,26 @@
-<li><a class="text-xl" href="/">Home</a></li>
-<li><a class="text-xl" href="/blog">Blog</a></li>
-<li><a class="text-xl" href="/tech">Tech Stack</a></li>
-<li><a class="text-xl" href="/projects">Projects</a></li>
-<li><a class="text-xl" href="/apps">Apps</a></li>
-<li><a class="text-xl" href="/personal">Personal</a></li>
-<li><a class="text-xl" href="/contact">Contact</a></li>
+<nav>
+  <ul class="unstyled">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/tech">Tech Stack</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/apps">Apps</a></li>
+    <li><a href="/personal">Personal</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    padding-inline: var(--space-3);
+  }
+
+  li:not(:first-child) {
+    padding-block-start: var(--space-3);
+  }
+
+  a {
+    font-size: var(--text-5);
+    text-decoration: none;
+  }
+</style>

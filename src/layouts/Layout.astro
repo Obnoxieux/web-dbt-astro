@@ -76,9 +76,7 @@ const finalMetaTags = {
     <AppBar />
 
     <aside data-sidebar>
-      <ul class="unstyled">
-        <NavbarLinks />
-      </ul>
+      <NavbarLinks />
     </aside>
 
     <main>
@@ -88,3 +86,25 @@ const finalMetaTags = {
     </main>
   </body>
 </html>
+
+<style>
+  main {
+    padding-inline: var(--space-4);
+
+    @media (min-width: 32rem) {
+      padding-inline: var(--space-6);
+    }
+
+    @media (min-width: 48rem) {
+      padding-inline: var(--space-8);
+    }
+
+    @media (min-width: 64rem) {
+      padding-inline: var(--space-12);
+    }
+
+    @media (min-width: 72rem) {
+      padding-inline: var(--space-16);
+    }
+  }
+</style>
