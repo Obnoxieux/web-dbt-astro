@@ -25,3 +25,10 @@ name = "TYPO3"
 description = "Flexible open-source enterprise CMS, suitable for every website ranging from small representations for individuals to full-scale multilingual content hubs."
 icon = "../assets/frameworks/TYPO3.svg"
 color = "#ff8700"
+
+[astro]
+id = "astro"
+name = "Astro"
+description = "Web framework and static site generator for content-focused websites."
+icon = "../assets/frameworks/astro.svg"
+color = "#e73cb4"
