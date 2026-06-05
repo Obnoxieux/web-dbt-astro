@@ -1,25 +1,38 @@
 ---
-import {getCollection, render} from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
-    params: {id: post.id},
-    props: {post},
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
   }));
 }
 
-const {post} = Astro.props;
-const {Content} = await render(post);
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
+  <div class="prose">
+    <h1>{post.data.title}</h1>
+    <dl>
+      <dt>Author:</dt>
+      <dd>{post.data.author}</dd>
 
-  <div class="flex flex-col min-w-full md:w-screen max-w-[90%] lg:max-w-[70%]">
-    <div class="prose">
-      <h1>{post.data.title}</h1>
-      <Content/>
-    </div>
+      <dt>Published:</dt>
+      <dd>
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString()}
+        </time>
+      </dd>
+
+      <dt>Abstract:</dt>
+      <dd>{post.data.description}</dd>
+    </dl>
+
+    <hr />
+    <Content />
   </div>
 </Layout>
