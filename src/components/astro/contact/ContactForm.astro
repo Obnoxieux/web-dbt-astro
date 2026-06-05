@@ -4,4 +4,4 @@ import { getSecret } from "astro:env/server";
 const contactEmail = getSecret("PUBLIC_CONTACT_EMAIL_ADDRESS");
 ---
 
-<a class="btn btn-neutral" href={`mailto:${contactEmail}`}>Send postz</a>
+<a class="button" href={`mailto:${contactEmail}`}>Send postz</a>
