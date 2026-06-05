@@ -10,6 +10,7 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   metaTags?: any;
 }
 
@@ -17,13 +18,17 @@ const {
   title = OpenGraphDefaults.title,
   description = OpenGraphDefaults.description,
   image = OpenGraphDefaults.ogImageName,
+  imageAlt = "",
   metaTags,
 } = Astro.props;
 
 // Compute meta tags
 const url = Astro.url;
-const ogImage = `${url}${image}`;
+const ogImage = { url: `${url}${image}`, alt: imageAlt };
 const canonicalURL = url;
+
+const openGraph = OpenGraphDefaults.getOpenGraphObject(url, title, description);
+openGraph.images.push(ogImage);
 
 // Merge with any provided meta tags
 const finalMetaTags = {
@@ -31,7 +36,7 @@ const finalMetaTags = {
   titleTemplate: "web-dbt | %s",
   description,
   canonical: canonicalURL,
-  openGraph: OpenGraphDefaults.getOpenGraphObject(url, title, description),
+  openGraph: openGraph,
   ...metaTags,
 };
 ---
