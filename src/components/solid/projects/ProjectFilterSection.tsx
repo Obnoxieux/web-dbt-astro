@@ -1,6 +1,7 @@
 import type { InferEntrySchema } from "astro:content";
 import { createSignal, For, type Component } from "solid-js";
-import "../../../styles/sections/projectFilter.css"
+import "../../../styles/sections/projectFilter.css";
+import { ProjectCard } from "./ProjectCard";
 
 interface Props {
   projects: InferEntrySchema<"projects">[];
@@ -33,6 +34,16 @@ export const ProjectFilterSection: Component<Props> = (props) => {
               <button class="filter-button">
                 <img src={framework.icon.src}></img>
               </button>
+            </li>
+          )}
+        </For>
+      </ul>
+
+      <ul class="unstyled">
+        <For each={props.projects}>
+          {(project) => (
+            <li>
+              <ProjectCard project={project} />
             </li>
           )}
         </For>

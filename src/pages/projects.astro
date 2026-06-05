@@ -20,6 +20,7 @@ const metaTags = {
 
 const languages = (await getCollection("languages")).map((lang) => lang.data);
 const frameworks = (await getCollection("frameworks")).map((fr) => fr.data);
+const projects = (await getCollection("projects")).map((pr) => pr.data);
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
@@ -31,7 +32,8 @@ const frameworks = (await getCollection("frameworks")).map((fr) => fr.data);
 
   <section class="project-filter-section">
     <ProjectFilterSection
-      projects={[]}
+      client:load
+      projects={projects}
       languages={languages}
       frameworks={frameworks}
     />
