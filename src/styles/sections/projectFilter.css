@@ -1,0 +1,30 @@
+.project-filter-section {
+  margin-block: var(--space-8);
+
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+
+    @media (min-width: 32rem) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    li {
+      display: grid;
+      grid-template-rows: subgrid;
+    }
+  }
+
+  .filter-button {
+    display: grid;
+    grid-template-rows: subgrid;
+    background: var(--muted);
+    color: var(--muted-foreground);
+
+    img {
+      width: 55px;
+      padding: 0.3rem;
+    }
+  }
+}

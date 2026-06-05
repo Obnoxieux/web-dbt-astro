@@ -23,15 +23,13 @@ const frameworks = (await getCollection("frameworks")).map((fr) => fr.data);
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
-  <section id="project-teaser" class="mb-4 mt-2 flex flex-col gap-2">
-    <h1 class="font-semibold mb-2 text-xl text-primary">My Projects</h1>
-    <p class="text-3xl sm:text-4xl font-extrabold">Discover my work</p>
-    <div class="mt-4 max-w-3xl space-y-6">
-      <p>Projects are WIP as I just moved away from GitHub.</p>
-    </div>
+  <section>
+    <p class="subheader">My Projects</p>
+    <h1>Discover my work</h1>
+    <p>Projects are WIP as I just moved away from GitHub.</p>
   </section>
 
-  <section>
+  <section class="project-filter-section">
     <ProjectFilterSection
       projects={[]}
       languages={languages}
@@ -39,3 +37,10 @@ const frameworks = (await getCollection("frameworks")).map((fr) => fr.data);
     />
   </section>
 </Layout>
+
+<style>
+  .subheader {
+    font-weight: var(--font-bold);
+    color: var(--color-secondary);
+  }
+</style>
