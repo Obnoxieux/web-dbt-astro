@@ -105,3 +105,27 @@ class SoftwareEngineer {
 $me = new SoftwareEngineer("David", "Web and Mobile Applications");
 $awesomeApp = $me->createAwesomeApp(["your", "ideas", "here"], "2 cups of Mate");"""
 icon = "../assets/languages/php.svg"
+
+[go]
+id = "go"
+name = "Go"
+color = "#00add8"
+sample = """
+
+package main
+
+func main() {
+   fmt.Println("Here we Go!")
+}"""
+icon = "../assets/languages/go.svg"
+
+[js]
+id = "js"
+name = "JavaScript"
+color = "#f1e05a"
+sample = """
+
+export function main() {
+  console.log("where are my types?");
+}"""
+icon = "../assets/languages/js.svg"
