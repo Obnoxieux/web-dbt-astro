@@ -9,38 +9,41 @@
 </script>
 
 {#if statsBatting.summaries.length > 0}
-    <div class="stats stats-vertical md:stats-horizontal shadow-md border">
+    <div class="card card-prominent stats stats-vertical md:stats-horizontal">
         <div class="stat">
             <div class="stat-title">AVG</div>
             <div class="stat-value">
-                {statsBatting.summaries[0].values.batting_average}
+                {statsBatting.summaries.at(0)?.values.batting_average}
             </div>
             <div class="stat-desc">Batting Average</div>
         </div>
+        
         <div class="stat">
             <div class="stat-title">OBP</div>
             <div class="stat-value">
-                {statsBatting.summaries[0].values.on_base_percentage}
+                {statsBatting.summaries.at(0)?.values.on_base_percentage}
             </div>
             <div class="stat-desc">On Base Percentage</div>
         </div>
+        
         <div class="stat">
             <div class="stat-title">SLG</div>
             <div class="stat-value">
-                {statsBatting.summaries[0].values.slugging_percentage}
+                {statsBatting.summaries.at(0)?.values.slugging_percentage}
             </div>
             <div class="stat-desc">Slugging Percentage</div>
         </div>
+        
         <div class="stat">
             <div class="stat-title">OPS</div>
             <div class="stat-value">
-                {statsBatting.summaries[0].values.on_base_plus_slugging}
+                {statsBatting.summaries.at(0)?.values.on_base_plus_slugging}
             </div>
             <div class="stat-desc">On Base Plus Slugging</div>
         </div>
     </div>
 
-    <div class="overflow-x-auto shadow-md rounded-2xl border">
+    <div class="card card-prominent">
         <table class="table">
             <!-- head -->
             <thead>
@@ -101,3 +104,9 @@
 {:else}
     <p>There seems to be no data available for the time being.</p>
 {/if}
+
+<style>
+  .card {
+    margin-block: var(--space-4);
+  }
+</style>

@@ -1,7 +1,7 @@
 :root {
   --background: light-dark(#fff, #1d232a);
   --foreground: light-dark(#09090b, #ecf9ff);
-  --card: light-dark(#fff, #18181b);
+  --card: light-dark(#fff, #191e24);
   --card-foreground: light-dark(#09090b, #fafafa);
   --primary: light-dark(#09090b, #fafafa);
   --primary-foreground: light-dark(#fafafa, #18181b);
@@ -62,6 +62,7 @@
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 600;
+  --font-extrabold: 800;
 
   --shadow-small: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-medium:

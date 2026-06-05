@@ -1,4 +1,7 @@
-@import "./code.css";
+@import "partials/stats.css";
+@import "partials/hero.css";
+@import "partials/buttons.css";
+@import "partials/cards.css";
 @import "./theme.css";
-@import "./global.css";
 @import "./typography.css";
+@import "./global.css";
