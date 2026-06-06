@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import ProjectDetailIntro from "../../components/astro/projects/ProjectDetailIntro.astro";
 import { render } from "astro:content";
 import ProjectDetailLinkSection from "../../components/astro/projects/ProjectDetailLinkSection.astro";
+import ProjectDetailMainContainer from "../../components/astro/projects/ProjectDetailMainContainer.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -19,7 +20,8 @@ const { Content } = await render(project);
 
 <Layout title={project.data.name} description={project.data.description}>
   <ProjectDetailIntro project={project} />
-  <ProjectDetailLinkSection project={project} />
   <hr />
   <Content />
+  <ProjectDetailMainContainer project={project}/>
+  <ProjectDetailLinkSection project={project} />
 </Layout>

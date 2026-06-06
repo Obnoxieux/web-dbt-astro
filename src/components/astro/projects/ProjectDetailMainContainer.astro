@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<h2>At a glance</h2>
+
+<section class="card">
+  <h3 class="mini-headline">Languages</h3>
+  <div class="col-span-3 flex">
+    {
+      project.data.languages.map((lang) => (
+        <div class="badge outline">{lang.id}</div>
+      ))
+    }
+  </div>
+
+  <h3 class="mini-headline">Tags</h3>
+  <div class="col-span-3 flex">
+    {
+      project.data.frameworks.map((framework) => (
+        <div class="badge outline">{framework.id}</div>
+      ))
+    }
+  </div>
+</section>
