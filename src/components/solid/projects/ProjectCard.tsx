@@ -8,12 +8,12 @@ interface Props {
 export const ProjectCard: Component<Props> = (props) => {
   return (
     <article class="card project-card">
-      <h2 class="card-title">{props.project.data.name}</h2>
+      <h3 class="card-title">{props.project.data.name}</h3>
       <p>{props.project.data.description}</p>
       <div class="flex justify-between items-center">
         <ul class="unstyled">
           <For each={props.project.data.languages}>
-            {(lang) => <li class="badge">{lang.id}</li>}
+            {(lang) => <li class="badge outline">{lang.id}</li>}
           </For>
         </ul>
         <a
