@@ -1,21 +1,28 @@
-import type { InferEntrySchema } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { For, type Component } from "solid-js";
 
 interface Props {
-  project: InferEntrySchema<"projects">;
+  project: CollectionEntry<"projects">;
 }
 
 export const ProjectCard: Component<Props> = (props) => {
   return (
     <article class="card project-card">
-      <h2 class="card-title">{props.project.name}</h2>
-      <p>{props.project.description}</p>
-      <div class="flex justify-end items-center">
-        <ul>
-          <For each={props.project.languages}>
+      <h2 class="card-title">{props.project.data.name}</h2>
+      <p>{props.project.data.description}</p>
+      <div class="flex justify-between items-center">
+        <ul class="unstyled">
+          <For each={props.project.data.languages}>
             {(lang) => <li class="badge">{lang.id}</li>}
           </For>
         </ul>
+        <a
+          class="button small"
+          href={`/projects/${props.project.id}`}
+          title="detail page for project"
+        >
+          Details
+        </a>
       </div>
     </article>
   );

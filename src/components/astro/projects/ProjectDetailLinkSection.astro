@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<section>
+  <h2>Links</h2>
+  <div class="buttons">
+    {
+      project.data.url && (
+        <a href={project.data.url} target="_blank" class="button outline">
+          Homepage
+        </a>
+      )
+    }
+    <a href={project.data.repositoryURL} target="_blank" class="button outline"
+      >Repository</a
+    >
+  </div>
+</section>
+
+<style>
+  .buttons {
+    display: flex;
+    gap: var(--space-2)
+  }
+</style>

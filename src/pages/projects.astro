@@ -20,7 +20,7 @@ const metaTags = {
 
 const languages = (await getCollection("languages")).map((lang) => lang.data);
 const frameworks = (await getCollection("frameworks")).map((fr) => fr.data);
-const projects = (await getCollection("projects")).map((pr) => pr.data);
+const projects = (await getCollection("projects"));
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
