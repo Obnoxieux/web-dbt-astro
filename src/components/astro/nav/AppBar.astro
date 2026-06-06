@@ -1,6 +1,22 @@
+---
+import { Image } from "astro:assets";
+import projectIcon from "../../../assets/images/icon.svg";
+---
+
 <nav data-topnav>
   <button data-sidebar-toggle aria-label="Toggle menu" class="outline">
     ☰
   </button>
+  <Image src={projectIcon} width={50} alt="Project icon" class="image" />
   <span>David's musings</span>
 </nav>
+
+<style>
+  .image {
+    border-radius: var(--radius-medium);
+
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid var(--ring);
+    }
+  }
+</style>
