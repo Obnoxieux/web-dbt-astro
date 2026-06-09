@@ -9,4 +9,6 @@ frameworks:
 - astro
 ---
 
---body--
+My personal website built with Astro. Deploys as a fully static site. Mostly simple HTML and CSS with some interactive islands of JS sprinkled in.
+
+You're viewing it right now. This is so meta!

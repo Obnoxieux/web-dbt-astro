@@ -1,32 +1,12 @@
-# Astro Starter Kit: Basics
+# web-dbt
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+My personal website built with Astro. Deploys as a fully static site. Mostly simple HTML and CSS with some interactive islands of JS sprinkled in.
 
-## 🚀 Project Structure
+## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Standard Astro, refer to their docs. Uses both Svelte and Solid islands, for no other reason except curiosity.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -37,6 +17,12 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Development
+
+http://localhost:4321
+
+### Production
+
+https://obnx.dev
