@@ -10,6 +10,14 @@
       grid-template-columns: repeat(6, 1fr);
     }
 
+    @media (min-width: 64rem) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    @media (min-width: 72rem) {
+      grid-template-columns: repeat(10, 1fr);
+    }
+
     li {
       display: grid;
       grid-template-rows: subgrid;
