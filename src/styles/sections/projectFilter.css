@@ -26,6 +26,15 @@
       width: 55px;
       padding: 0.3rem;
     }
+
+    &.active {
+      border: 2px solid var(--ring);
+    }
+  }
+
+  .filter-button.all {
+    font-size: var(--text-5);
+    font-weight: var(--font-bold);
   }
 
   .project-grid {

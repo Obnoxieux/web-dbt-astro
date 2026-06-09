@@ -5,13 +5,17 @@ export interface ProjectDTO {
   name: string;
   description: string;
   languages: { id: string }[];
+  frameworks: { id: string }[];
 }
 
-export function projectCollectionToDTO(coll: CollectionEntry<"projects">): ProjectDTO {
+export function projectCollectionToDTO(
+  coll: CollectionEntry<"projects">,
+): ProjectDTO {
   return {
     id: coll.id,
     name: coll.data.name,
     description: coll.data.description,
-    languages: coll.data.languages
-  }
+    languages: coll.data.languages,
+    frameworks: coll.data.frameworks,
+  };
 }
