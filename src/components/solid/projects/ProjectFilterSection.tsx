@@ -1,10 +1,11 @@
-import type { CollectionEntry, InferEntrySchema } from "astro:content";
+import type { InferEntrySchema } from "astro:content";
 import { createSignal, For, type Component } from "solid-js";
+import type { ProjectDTO } from "../../../lib/model/ProjectDTO";
 import "../../../styles/sections/projectFilter.css";
 import { ProjectCard } from "./ProjectCard";
 
 interface Props {
-  projects: CollectionEntry<"projects">[];
+  projects: ProjectDTO[];
   languages: InferEntrySchema<"languages">[];
   frameworks: InferEntrySchema<"frameworks">[];
 }

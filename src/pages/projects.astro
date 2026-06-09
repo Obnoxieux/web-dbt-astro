@@ -3,6 +3,7 @@ import { OpenGraphDefaults } from "../lib/classes/OpenGraphDefaults";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { ProjectFilterSection } from "../components/solid/projects/ProjectFilterSection";
+import { projectCollectionToDTO } from "../lib/model/ProjectDTO";
 
 const pageTitle = "My personal projects";
 const description =
@@ -20,7 +21,7 @@ const metaTags = {
 
 const languages = (await getCollection("languages")).map((lang) => lang.data);
 const frameworks = (await getCollection("frameworks")).map((fr) => fr.data);
-const projects = (await getCollection("projects"));
+const projects = (await getCollection("projects")).map((coll) => projectCollectionToDTO(coll));
 ---
 
 <Layout title={pageTitle} description={description} metaTags={metaTags}>
