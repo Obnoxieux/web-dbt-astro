@@ -3,11 +3,12 @@ import { createSignal, For, type Component } from "solid-js";
 import type { ProjectDTO } from "../../../lib/model/ProjectDTO";
 import "../../../styles/sections/projectFilter.css";
 import { ProjectCard } from "./ProjectCard";
+import type { TechnologyDTO } from "../../../lib/model/TechnologyDTO";
 
 interface Props {
   projects: ProjectDTO[];
-  languages: InferEntrySchema<"languages">[];
-  frameworks: InferEntrySchema<"frameworks">[];
+  languages: TechnologyDTO[];
+  frameworks: TechnologyDTO[];
 }
 
 export const ProjectFilterSection: Component<Props> = (props) => {
@@ -22,7 +23,7 @@ export const ProjectFilterSection: Component<Props> = (props) => {
           {(language) => (
             <li>
               <button class="filter-button">
-                <img src={language.icon.src} alt={language.name}></img>
+                <img src={language.src} alt={language.name}></img>
               </button>
             </li>
           )}
@@ -35,7 +36,7 @@ export const ProjectFilterSection: Component<Props> = (props) => {
           {(framework) => (
             <li>
               <button class="filter-button">
-                <img src={framework.icon.src} alt={framework.name}></img>
+                <img src={framework.src} alt={framework.name}></img>
               </button>
             </li>
           )}
