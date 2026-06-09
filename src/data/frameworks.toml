@@ -32,3 +32,10 @@ name = "Astro"
 description = "Web framework and static site generator for content-focused websites."
 icon = "../assets/frameworks/astro.svg"
 color = "#e73cb4"
+
+[vite]
+id = "vite"
+name = "Vite"
+description = "Next-generation JavaScript bundler"
+icon = "../assets/frameworks/vite.svg"
+color = "#b39aff"

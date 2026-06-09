@@ -7,6 +7,8 @@ languages:
 - ts
 frameworks:
 - astro
+- vite
+- svelte
 ---
 
 My personal website built with Astro. Deploys as a fully static site. Mostly simple HTML and CSS with some interactive islands of JS sprinkled in.
