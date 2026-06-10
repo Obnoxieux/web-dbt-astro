@@ -18,6 +18,7 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
+
 <Layout title={project.data.name} description={project.data.description}>
   <ProjectDetailIntro project={project} />
   <hr />

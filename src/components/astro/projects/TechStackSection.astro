@@ -1,8 +1,11 @@
 ---
+import { getCollection } from "astro:content";
+import FrameworkCard from "./FrameworkCard.astro";
 
+const frameworks = await getCollection("frameworks");
 ---
 
-<section id="tech-stack" class="mb-8 mt-2 flex flex-col gap-2">
+<section class="mb-8 mt-2 flex flex-col gap-2">
   <h1 class="font-semibold mb-2 text-xl text-secondary">My TechStack</h1>
   <p class="text-3xl sm:text-4xl font-extrabold">
     Building Things. One step at a time.
@@ -55,14 +58,41 @@
 
     <h2>Area of expertise</h2>
     <ul>
-      <li>Backend web development (Go, PHP, Swift, Kotlin)</li>
-      <li>Frontend web development (TypeScript, Svelte)</li>
-      <li>
-        Mobile App development (Android - Jetpack Compose, previously SwiftUI
-        for Apple platforms)
-      </li>
+      <li>Backend web development</li>
+      <li>Frontend web development</li>
+      <li>Mobile App development</li>
     </ul>
   </div>
 
-  <section></section>
+  <hr />
 </section>
+
+<section class="mt-4 mb-6">
+  <header>
+    <h2>Frameworks</h2>
+  </header>
+  <div class="framework-grid">
+    {frameworks.map((framework) => <FrameworkCard framework={framework} />)}
+  </div>
+</section>
+
+<style>
+  .framework-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: var(--space-6);
+
+    @media (min-width: 32rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 40rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 64rem) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

@@ -6,9 +6,9 @@ repositoryURL: "https://git.berlinskylarks.de/obnoxieux/web-dbt-astro"
 languages: 
 - ts
 frameworks:
-- astro
-- vite
-- svelte
+- Astro
+- Vite
+- Svelte
 ---
 
 My personal website built with Astro. Deploys as a fully static site. Mostly simple HTML and CSS with some interactive islands of JS sprinkled in.

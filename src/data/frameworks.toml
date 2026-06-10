@@ -1,40 +1,40 @@
 [compose]
-id = "compose"
+id = "Jetpack Compose"
 name = "Jetpack Compose"
 description = "The modern declarative UI toolkit by Google for Android and  multiplatform."
 icon = "../assets/frameworks/jetpack_compose_icon.png"
 color = "#3ddc84"
 
-[swiftui]
-id = "swiftui"
+[SwiftUI]
+id = "SwiftUI"
 name = "SwiftUI"
 description = "Declarative UI framework that allows the creation of apps for all Apple platforms with maximum code reusability."
 icon = "../assets/frameworks/swiftui-og.png"
 color = "#006dfd"
 
-[svelte]
-id = "svelte"
+[Svelte]
+id = "Svelte"
 name = "Svelte"
 description = "Framework for JavaScript / TypeScript for beautiful and fast web applications that run in every modern browser."
 icon = "../assets/frameworks/svelte.svg"
 color = "#ff3e00"
 
-[typo3]
-id = "typo3"
+[TYPO3]
+id = "TYPO3"
 name = "TYPO3"
 description = "Flexible open-source enterprise CMS, suitable for every website ranging from small representations for individuals to full-scale multilingual content hubs."
 icon = "../assets/frameworks/TYPO3.svg"
 color = "#ff8700"
 
-[astro]
-id = "astro"
+[Astro]
+id = "Astro"
 name = "Astro"
 description = "Web framework and static site generator for content-focused websites."
 icon = "../assets/frameworks/astro.svg"
 color = "#e73cb4"
 
-[vite]
-id = "vite"
+[Vite]
+id = "Vite"
 name = "Vite"
 description = "Next-generation JavaScript bundler"
 icon = "../assets/frameworks/vite.svg"

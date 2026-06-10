@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  framework: CollectionEntry<"frameworks">;
+}
+
+const { framework } = Astro.props;
+const borderColor = framework.data.color;
+---
+
+<article class="card" data-border={framework.data.color}>
+  <img src={framework.data.icon.src} aria-hidden="true" />
+  <h3>{framework.data.name}</h3>
+  <p>{framework.data.description}</p>
+</article>
+
+<style define:vars={{ borderColor }}>
+  article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    /* use attr() here when ready */
+    border-color: var(--borderColor);
+
+    h3 {
+      margin-block: var(--space-1);
+    }
+
+    img {
+      width: 55px;
+      place-self: center;
+    }
+  }
+</style>
