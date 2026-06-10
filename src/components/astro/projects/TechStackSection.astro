@@ -69,7 +69,7 @@ const frameworks = await getCollection("frameworks");
 
 <section class="mt-4 mb-6">
   <header>
-    <h2>Frameworks</h2>
+    <h2>Frameworks and Technologies</h2>
   </header>
   <div class="framework-grid">
     {frameworks.map((framework) => <FrameworkCard framework={framework} />)}
@@ -93,6 +93,12 @@ const frameworks = await getCollection("frameworks");
 
     @media (min-width: 64rem) {
       grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 72rem) {
+      gap: var(--space-10);
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 </style>

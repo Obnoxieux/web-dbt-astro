@@ -64,7 +64,7 @@ export const ProjectFilterSection: Component<Props> = (props) => {
         </For>
       </ul>
 
-      <h2>Frameworks</h2>
+      <h2>Technologies</h2>
       <ul class="filter-grid unstyled">
         <button
           class="filter-button all"

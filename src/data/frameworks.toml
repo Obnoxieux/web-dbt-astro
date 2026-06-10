@@ -39,3 +39,80 @@ name = "Vite"
 description = "Next-generation JavaScript bundler"
 icon = "../assets/frameworks/vite.svg"
 color = "#b39aff"
+
+[Vitest]
+id = "Vitest"
+name = "Vitest"
+description = "Testing framework for JavaScript and TypeScript based on the Vite bundler."
+icon = "../assets/frameworks/vitest.svg"
+color = "#22ff73"
+
+[Playwright]
+id = "Playwright"
+name = "Playwright"
+description = "End-to-end testing framework for modern web applications."
+icon = "../assets/frameworks/playwright.svg"
+color = "#45ba4b"
+
+[Vapor]
+id = "Vapor"
+name = "Vapor"
+description = "Swift web framework for building server-side applications."
+icon = "../assets/frameworks/vapor.png"
+color = "#df3efb"
+
+[Node]
+id = "Node"
+name = "Node"
+description = "JavaScript runtime environment for server-side applications."
+icon = "../assets/frameworks/node.svg"
+color = "#84ba64"
+
+[Deno]
+id = "Deno"
+name = "Deno"
+description = "Secure JavaScript and TypeScript runtime."
+icon = "../assets/frameworks/deno.svg"
+color = "#70ffaf"
+
+[Docker]
+id = "Docker"
+name = "Docker"
+description = "Containerization platform for building and deploying applications."
+icon = "../assets/frameworks/docker.svg"
+color = "#2560ff"
+
+[PocketBase]
+id = "PocketBase"
+name = "PocketBase"
+description = "Tiny extensible backend-as-a-service."
+icon = "../assets/frameworks/pocketbase.svg"
+color = "light-dark(black, white)"
+
+[SQLite]
+id = "SQLite"
+name = "SQLite"
+description = "Lightweight relational database management system."
+icon = "../assets/frameworks/sqlite.svg"
+color = "light-dark(black, white)"
+
+[PostgreSQL]
+id = "PostgreSQL"
+name = "PostgreSQL"
+description = "Open-source relational database management system."
+icon = "../assets/frameworks/postgresql.svg"
+color = "#699eca"
+
+[Ktor]
+id = "Ktor"
+name = "Ktor"
+description = "Kotlin-based web framework for building server-side applications."
+icon = "../assets/frameworks/ktor.svg"
+color = "#6373ff"
+
+[Chi]
+id = "Chi"
+name = "Chi"
+description = "A lightweight, idiomatic and composable router for building Go HTTP services."
+icon = "../assets/frameworks/chi.svg"
+color = "#01933f"

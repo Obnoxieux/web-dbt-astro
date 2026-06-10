@@ -10,7 +10,12 @@ const borderColor = framework.data.color;
 ---
 
 <article class="card" data-border={framework.data.color}>
-  <img src={framework.data.icon.src} aria-hidden="true" />
+  <img
+    loading="lazy"
+    src={framework.data.icon.src}
+    aria-hidden="true"
+    alt={`icon for ${framework.data.name}`}
+  />
   <h3>{framework.data.name}</h3>
   <p>{framework.data.description}</p>
 </article>
