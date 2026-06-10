@@ -1,20 +1,24 @@
 ---
-
+import { Image } from "astro:assets";
+import fakeCodePhoto from "../../../assets/images/fake_code_photo.webp";
 ---
 
-<div class="hero p-5 md:p-20 bg-base-200 rounded-lg shadow-lg">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img
-      alt="screenshot of source code in an IDE on a dark background"
-      src="/fake_code_photo.webp"
-      class="max-w-xs rounded-lg shadow-2xl"
+<div class="hero card my-4">
+  <div class="hero-content">
+    
+    <Image
+      src={fakeCodePhoto}
+      class="hero-image"
+      alt="IDE with code on a dark screen"
+      loading={"lazy"}
     />
+    
     <div>
-      <h2 class="h2 font-bold">Projects</h2>
-      <p class="py-6">
+      <h2>Projects</h2>
+      <p>
         My small portfolio of things I built using those technologies.
       </p>
-      <a class="btn btn-secondary" href="/projects">Go to Section</a>
+      <a class="button" href="/projects">Go to Section</a>
     </div>
   </div>
 </div>
