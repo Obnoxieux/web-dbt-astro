@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="card card-prominent">
+    <div class="card card-prominent table-wrapper">
         <table class="table">
             <!-- head -->
             <thead>

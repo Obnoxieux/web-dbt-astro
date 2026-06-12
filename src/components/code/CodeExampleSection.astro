@@ -1,6 +1,6 @@
 ---
 import CodeBlock from "./CodeBlock.astro";
-import { type CodeSampleItem } from "../../../lib/codeSamples.ts";
+import { type CodeSampleItem } from "../../lib/codeSamples.ts";
 
 interface Props {
   codeSamples: CodeSampleItem[];
@@ -35,5 +35,9 @@ const { codeSamples } = Astro.props;
   .sample-container {
     position: relative;
     min-height: 500px;
+  }
+
+  [role="tablist"] {
+    flex-wrap: wrap;
   }
 </style>

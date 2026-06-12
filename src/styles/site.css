@@ -3,6 +3,8 @@
 @import "partials/buttons.css";
 @import "partials/cards.css";
 @import "partials/prose.css";
+@import "partials/tables.css";
+
 @import "./theme.css";
 @import "./typography.css";
 @import "./global.css";
