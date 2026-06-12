@@ -1,8 +1,8 @@
 import { createMemo, createSignal, For, type Component } from "solid-js";
-import type { ProjectDTO } from "../../../lib/model/ProjectDTO";
-import "../../../styles/sections/projectFilter.css";
+import type { ProjectDTO } from "../../lib/model/ProjectDTO";
+import "../../styles/sections/projectFilter.css";
 import { ProjectCard } from "./ProjectCard";
-import type { TechnologyDTO } from "../../../lib/model/TechnologyDTO";
+import type { TechnologyDTO } from "../../lib/model/TechnologyDTO";
 
 interface Props {
   projects: ProjectDTO[];

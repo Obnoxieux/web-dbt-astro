@@ -4,10 +4,10 @@
   import FieldingStats from "./FieldingStats.svelte";
   import { slide } from "svelte/transition";
   import { cubicIn } from "svelte/easing";
-  import type { BattingStatisticsEntry } from "../../../lib/model/BattingStatisticsEntry.ts";
-  import type { PitchingStatisticsEntry } from "../../../lib/model/PitchingStatisticsEntry.ts";
-  import type { FieldingStatisticsEntry } from "../../../lib/model/FieldingStatisticsEntry.ts";
-  import { StatsType } from "../../../lib/enums/StatsType.ts";
+  import type { BattingStatisticsEntry } from "../../lib/model/BattingStatisticsEntry.ts";
+  import type { PitchingStatisticsEntry } from "../../lib/model/PitchingStatisticsEntry.ts";
+  import type { FieldingStatisticsEntry } from "../../lib/model/FieldingStatisticsEntry.ts";
+  import { StatsType } from "../../lib/enums/StatsType.ts";
 
   interface Props {
     statsBatting: BattingStatisticsEntry;
