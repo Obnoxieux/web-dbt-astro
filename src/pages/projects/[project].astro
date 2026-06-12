@@ -21,7 +21,9 @@ const { Content } = await render(project);
 <Layout title={project.data.name} description={project.data.description}>
   <ProjectDetailIntro project={project} />
   <hr />
-  <Content />
+  <div class="prose">
+    <Content />
+  </div>
   <ProjectDetailMainContainer project={project} />
   <ProjectDetailLinkSection project={project} />
 </Layout>
