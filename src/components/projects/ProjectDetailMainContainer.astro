@@ -1,39 +1,48 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { getEntries } from "astro:content";
 
 interface Props {
   project: CollectionEntry<"projects">;
 }
 
 const { project } = Astro.props;
+const relatedFrameworks = await getEntries(project.data.frameworks);
+const relatedLanguages = await getEntries(project.data.languages);
 ---
 
 <h2>At a glance</h2>
 
 <section class="card">
   <h3>Languages</h3>
-  <div class="flex-container">
+  <ul class="flex-container unstyled">
     {
-      project.data.languages.map((lang) => (
-        <div class="badge outline">{lang.id}</div>
+      relatedLanguages.map((lang) => (
+        <li>
+          <Image src={lang.data.icon} alt={lang.data.name} width={55} />
+        </li>
       ))
     }
-  </div>
+  </ul>
 
   <h3>Frameworks and Technologies</h3>
-  <div class="flex-container">
+  <ul class="flex-container unstyled">
     {
-      project.data.frameworks.map((framework) => (
-        <div class="badge outline">{framework.id}</div>
+      relatedFrameworks.map((framework) => (
+        <li>
+          <Image src={framework.data.icon} alt={framework.data.name} width={55} />
+        </li>
       ))
     }
-  </div>
+  </ul>
 </section>
 
 <style>
   .flex-container {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-8);
+    flex-wrap: wrap;
   }
 </style>
