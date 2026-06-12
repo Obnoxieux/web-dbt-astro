@@ -1,4 +1,4 @@
-import { createMemo, createSignal, For, type Component } from "solid-js";
+import { createMemo, createSignal, For, Show, type Component } from "solid-js";
 import type { ProjectDTO } from "../../lib/model/ProjectDTO";
 import "../../styles/sections/projectFilter.css";
 import { ProjectCard } from "./ProjectCard";
@@ -93,15 +93,20 @@ export const ProjectFilterSection: Component<Props> = (props) => {
       </ul>
 
       <h2>Projects</h2>
-      <ul class="project-grid unstyled">
-        <For each={filteredProjects()}>
-          {(project) => (
-            <li>
-              <ProjectCard project={project} />
-            </li>
-          )}
-        </For>
-      </ul>
+      <Show
+        when={filteredProjects().length > 0}
+        fallback={<p>No projects found with the provided filters.</p>}
+      >
+        <ul class="project-grid unstyled">
+          <For each={filteredProjects()}>
+            {(project) => (
+              <li>
+                <ProjectCard project={project} />
+              </li>
+            )}
+          </For>
+        </ul>
+      </Show>
     </div>
   );
 };

@@ -19,7 +19,7 @@ const relatedLanguages = await getEntries(project.data.languages);
   <ul class="flex-container unstyled">
     {
       relatedLanguages.map((lang) => (
-        <li>
+        <li title={lang.data.name}>
           <Image src={lang.data.icon} alt={lang.data.name} width={55} />
         </li>
       ))
@@ -30,7 +30,7 @@ const relatedLanguages = await getEntries(project.data.languages);
   <ul class="flex-container unstyled">
     {
       relatedFrameworks.map((framework) => (
-        <li>
+        <li title={framework.data.name}>
           <Image src={framework.data.icon} alt={framework.data.name} width={55} />
         </li>
       ))

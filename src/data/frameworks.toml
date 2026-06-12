@@ -116,3 +116,24 @@ name = "Chi"
 description = "A lightweight, idiomatic and composable router for building Go HTTP services."
 icon = "../assets/frameworks/chi.svg"
 color = "#01933f"
+
+[Vue]
+id = "Vue"
+name = "Vue"
+description = "A progressive JavaScript framework for building user interfaces."
+icon = "../assets/frameworks/vue.svg"
+color = "#41B883"
+
+[Solid]
+id = "Solid"
+name = "Solid"
+description = "A reactive JavaScript framework for building user interfaces."
+icon = "../assets/frameworks/solid.svg"
+color = "#2c4f7c"
+
+[Lit]
+id = "Lit"
+name = "Lit"
+description = "Library for building reactive web components."
+icon = "../assets/frameworks/lit.svg"
+color = "#334eff"
